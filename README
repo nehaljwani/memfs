@@ -1,0 +1,28 @@
+Current Status:
+
+Only RAMfs Implemented
+        .readdir = memFS_fuse_readdir,          //Working
+        .opendir = memFS_fuse_opendir,          //Working
+        .releasedir = memFS_fuse_releasedir,    //Working
+        .mkdir = memFS_fuse_mkdir,              // :'(
+        .rmdir = memFS_fuse_rmdir,              //Working
+        .read = memFS_fuse_read,                //Working
+        .open = memFS_fuse_open,                //Working
+        .create = memFS_fuse_create,            // :('
+        .write = memFS_fuse_write,              //Not implemented
+        .truncate = memFS_fuse_truncate,        //Can't Say
+        .access = memFS_fuse_access,            //Working
+        .getattr = memFS_fuse_getattr,          //Working, but creating problems ?
+        .rename = memFS_fuse_rename,            //Can't say ^^
+        .unlink = memFS_fuse_unlink,            //Working
+//      .statfs = memFS_fuse_statfs,
+//      .symlink = memFS_fuse_symlink,
+//      .link = memFS_fuse_link,
+
+Except the last three, the code of all others have been written. There is some permissions issue which I couldn't resolve.
+
+To make, run:
+$ make
+
+Example Usage:
+$ ./MemoryFS_r -f Data tmp
